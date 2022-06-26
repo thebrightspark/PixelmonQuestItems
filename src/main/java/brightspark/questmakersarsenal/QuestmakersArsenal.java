@@ -1,28 +1,28 @@
-package brightspark.pixelmonquestitems;
+package brightspark.questmakersarsenal;
 
-import brightspark.pixelmonquestitems.datagen.PQIItemModelProvider;
-import brightspark.pixelmonquestitems.datagen.PQILangProvider;
+import brightspark.questmakersarsenal.datagen.QAItemModelProvider;
+import brightspark.questmakersarsenal.datagen.QALangProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod(PixelmonQuestItems.MOD_ID)
-public class PixelmonQuestItems {
-	public static final String MOD_ID = "pixelmonquestitems";
+@Mod(QuestmakersArsenal.MOD_ID)
+public class QuestmakersArsenal {
+	public static final String MOD_ID = "questmakersarsenal";
 
-	public PixelmonQuestItems() {
+	public QuestmakersArsenal() {
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modBus.addListener(this::gatherData);
-		PQIItems.ITEMS.register(modBus);
+		QAItems.ITEMS.register(modBus);
 	}
 
 	private void gatherData(GatherDataEvent event) {
 		if (event.includeClient()) {
 			DataGenerator generator = event.getGenerator();
-			generator.addProvider(new PQIItemModelProvider(generator, event.getExistingFileHelper()));
-			generator.addProvider(new PQILangProvider(generator));
+			generator.addProvider(new QAItemModelProvider(generator, event.getExistingFileHelper()));
+			generator.addProvider(new QALangProvider(generator));
 		}
 	}
 }

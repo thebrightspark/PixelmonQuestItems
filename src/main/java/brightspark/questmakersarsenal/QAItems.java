@@ -1,4 +1,4 @@
-package brightspark.pixelmonquestitems;
+package brightspark.questmakersarsenal;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -7,8 +7,11 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class PQIItems {
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, PixelmonQuestItems.MOD_ID);
+public class QAItems {
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(
+		ForgeRegistries.ITEMS,
+		QuestmakersArsenal.MOD_ID
+	);
 
 	public static final RegistryObject<Item> FOLDER = item("folder", 64);
 
@@ -31,7 +34,7 @@ public class PQIItems {
 	public static final RegistryObject<Item> SKULL = item("skull", 1);
 	public static final RegistryObject<Item> URN = item("urn", 1);
 
-	private static final ItemGroup GROUP = new ItemGroup(PixelmonQuestItems.MOD_ID) {
+	private static final ItemGroup GROUP = new ItemGroup(QuestmakersArsenal.MOD_ID) {
 		@Override
 		public ItemStack makeIcon() {
 			return new ItemStack(TRADING_CARD.get());
